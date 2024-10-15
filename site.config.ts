@@ -6,7 +6,7 @@ export default siteConfig({
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
-  rootNotionSpaceId: null,
+  rootNotionSpaceId: '9831ffff-d926-4096-939b-6ce8884c2d76',
 
   // basic site info (required)
   name: '读书笔记',
@@ -58,7 +58,7 @@ export default siteConfig({
       pageId: '11fd189352fe813aa054e300aa221b79'
     },
     {
-      title: 'List',
+      title: 'Lists',
       pageId: '120d189352fe80289cb6ea0d4e1ba921'
     }
   ]
