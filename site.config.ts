@@ -54,8 +54,8 @@ export default siteConfig({
   navigationStyle: 'custom',
   navigationLinks: [
     {
-      title: 'About',
-      pageId: '11fd189352fe813aa054e300aa221b79'
+      title: 'Learning',
+      pageId: '120d189352fe8082a9ade74c5eeaae04'
     },
     {
       title: 'All',
