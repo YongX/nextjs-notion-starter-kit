@@ -58,8 +58,8 @@ export default siteConfig({
       pageId: '11fd189352fe813aa054e300aa221b79'
     },
     {
-      title: 'Lists',
-      pageId: '120d189352fe80289cb6ea0d4e1ba921'
+      title: 'All',
+      pageId: '120d189352fe800c91d5d744bcee2730'
     }
   ]
 })
