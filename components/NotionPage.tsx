@@ -213,7 +213,14 @@ export function NotionPage({
   // lite mode is for oembed
   const isLiteMode = lite === 'true'
 
+  // 使用 hasMounted 状态防止 hydration 不匹配
+  // 服务器端和客户端首次渲染都使用 false，然后在客户端 mount 后再读取真实值
+  const [hasMounted, setHasMounted] = React.useState(false)
   const { isDarkMode } = useDarkMode()
+
+  React.useEffect(() => {
+    setHasMounted(true)
+  }, [])
 
   const siteMapPageUrl = React.useMemo(() => {
     const params: any = {}
@@ -301,14 +308,14 @@ export function NotionPage({
       />
 
       {isLiteMode && <BodyClassName className='notion-lite' />}
-      {isDarkMode && <BodyClassName className='dark-mode' />}
+      {hasMounted && isDarkMode && <BodyClassName className='dark-mode' />}
 
       <NotionRenderer
         bodyClassName={cs(
           styles.notion,
           pageId === site.rootNotionPageId && 'index-page'
         )}
-        darkMode={isDarkMode}
+        darkMode={hasMounted && isDarkMode}
         components={components}
         recordMap={recordMap}
         rootPageId={site.rootNotionPageId}
