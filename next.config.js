@@ -10,6 +10,10 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 export default withBundleAnalyzer({
   staticPageGenerationTimeout: 300,
+
+  // Next.js 16 默认启用 Turbopack，添加空配置以静默警告并继续使用 webpack
+  turbopack: {},
+
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'www.notion.so' },
