@@ -42,5 +42,6 @@ export default withBundleAnalyzer({
   },
 
   // See https://react-tweet.vercel.app/next#troubleshooting
-  transpilePackages: ['react-tweet']
+  // @react-icons/all-files 需要转译以兼容 Turbopack SSR
+  transpilePackages: ['react-tweet', '@react-icons/all-files']
 })
